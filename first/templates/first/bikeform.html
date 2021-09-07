@@ -1,0 +1,36 @@
+{% extends 'first/base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    {% for msg in messages %}
+    <p {% if msg.tags %} class="alert alert-{{msg.tags}} mb-5" {% endif %}>{{msg}}</p>
+    {% endfor %}
+  </div>
+</div>
+<div class="row" style="padding:40px;">
+  <div class="col-md-6 offset-md-3 text-center" style="background: linear-gradient(to right,#ee5a6f,#f29263);padding:50px;border-radius:10px;">
+    <h3>Book a Ride!!</h3>
+    <br>
+    <form method="post" class="form-inline" action="{% url 'bikes' %}">
+      {% csrf_token %}
+        <div class="form-group ">
+          <label for="ci">Enter Your City</label>
+          <input type="text" id="ci" name="city" class="form-control">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="stdate">Start date and time</label>
+          <input type="datetime-local" class="form-control" name="stdate" id="stdate">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="enddate">End date and time</label>
+          <input type="datetime-local" class="form-control" name="enddate" id="enddate">
+        </div>
+        <br>
+        <input type="submit" value="Search" class="btn btn-dark btn-lg">
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'first/base.html' %}
+{% block content %}
+<h3 class="text-center alert alert-primary">SignUp</h3>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    {% if messages %}
+    {% for msg in messages %}
+    <p {% if msg.tags %} class="alert alert-{{msg.tags}} mb-5" {% endif %}>{{msg}}</p>
+    {% endfor %}
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      {% for fm in form %}
+      {{fm.label_tag}} {{fm}} {{fm.error|striptags}} <br>
+      {% endfor %}
+      <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+  </div>
+</div>
+{% endblock content %}

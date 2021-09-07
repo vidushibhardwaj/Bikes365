@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'first/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'first/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block head %}
+
+    {% endblock head %}
+  </head>
+  <body>
+    {% include 'first/navbar.html' %}
+    {% block bg %}
+
+    {% endblock bg %}
+   <div class="container-fluid">
+      {% block msg %}
+
+      {% endblock msg %}
+      {% block content %}
+
+      {% endblock content %}
+   </div>
+    <script type="text/javascript" src="{% static 'first/js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'first/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'first/js/popper.js' %}"></script>
+  </body>
+</html>

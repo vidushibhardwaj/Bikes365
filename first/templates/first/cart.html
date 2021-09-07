@@ -1,0 +1,80 @@
+{% extends 'first/base.html' %}
+{% block content %}
+{% for msg in messages %}
+<p {% if msg.tags %} class="alert alert-{{msg.tags}} mb-5" {% endif %}>{{msg}}</p>
+{% endfor %}
+<div class="container">
+  <div class="row" style="padding:10px;">
+    <div class="col-md-4 col-sm-12 text-center" style="background: linear-gradient(to right,#ee5a6f,#f29263); padding:20px;">
+      <h3><b>YOUR ORDERS</b></h3>
+    </div>
+    <div class="col-md-8 col-sm-12">
+      {% if future %}
+      {% for order in future %}
+      <div class="card" style="border-color:green">
+        <div class="card-body">
+          <h5 class="card-title">Order: #{{order.id}}</h5>
+          <div class="row">
+            <div class="col-md-4">
+              <p class="card-text">{{order.bikeid}}</p>
+            </div>
+            <div class="col-md-8">
+              <p class="card-text" style="float:right;"><b>START</b>   {{order.startdaytime}}</p>
+              <p class="card-text"><b>END</b>   {{order.enddaytime}}</p>
+            </div>
+          </div>
+          <a href="{% url 'orderdetail' order.id %}" class="btn btn-success">View Order Details</a>
+          <a href="{% url 'cancel_order' order.id %}" class="btn btn-dark">Cancel Order</a>
+          <a href="#" class="btn btn-primary">CheckOut</a>
+        </div>
+      </div><br>
+      {% endfor %}
+      {% endif %}
+
+      {% if current %}
+      {% for order in current %}
+      <div class="card" style="border-color:orange;">
+        <div class="card-body">
+          <i class="fa fa-bolt" aria-hidden="true" style="color:orange;"></i>
+          <h5 class="card-title">Order: #{{order.id}}</h5>
+          <div class="row">
+            <div class="col-md-4">
+              <p class="card-text">{{order.bikeid}}</p>
+            </div>
+            <div class="col-md-8">
+              <p class="card-text" style="float:right;"><b>START</b>   {{order.startdaytime}}</p>
+              <p class="card-text"><b>END</b>   {{order.enddaytime}}</p>
+            </div>
+          </div>
+          <a href="{% url 'orderdetail' order.id %}" class="btn btn-warning">View Order Details</a>
+        </div>
+      </div><br>
+      {% endfor %}
+      {% endif %}
+
+      {% if past %}
+      {% for order in past %}
+      <div class="card" style="border-color:grey;">
+        <div class="card-body">
+          <i class="fa fa-check-circle" aria-hidden="true" style="color:grey;"></i>
+          <h5 class="card-title">Order: #{{order.id}}</h5>
+          <div class="row">
+            <div class="col-md-4">
+              <p class="card-text">{{order.bikeid}}</p>
+            </div>
+            <div class="col-md-8">
+              <p class="card-text" style="float:right;"><b>START</b>   {{order.startdaytime}}</p>
+              <p class="card-text"><b>END</b>   {{order.enddaytime}}</p>
+            </div>
+          </div>
+          <a href="{% url 'orderdetail' order.id %}" class="btn btn-secondary">View Order Details</a>
+        </div>
+      </div><br>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

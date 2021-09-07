@@ -1,0 +1,29 @@
+{% extends 'first/base.html' %}
+{% block content %}
+<div class="row" style="margin:40px;">
+  <div class="col-md-6 offset-md-3">
+    <div class="card card-block">
+      <div class="row">
+        <div class="col-md-6 col-sm-12" style="padding:30px;">
+          <img src="{{bike.bikeimg.url}}" alt="" height=130 width=150>
+        </div>
+        <div class="col-md-6 col-sm-12" style="padding:30px;">
+          <table cellpadding=10>
+            <tr>
+              <th>Name:</th><td>{{bike.name}}</td>
+            </tr>
+            <tr>
+              <th>Model:</th><td>{{bike.model}}</td>
+            </tr>
+            <tr>
+              <th>Mileage:</th><td>{{bike.mileage}}</td>
+            </tr>
+          </table>
+           <br>
+          <a href="{% url 'cart' %}" class="btn btn-success">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content%}

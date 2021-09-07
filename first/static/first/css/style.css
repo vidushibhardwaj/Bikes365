@@ -1,0 +1,46 @@
+.bike_details{
+  width: 16rem;
+  display: flex;
+  float:left;
+  padding:2px;
+}
+body{
+  background-color: #f9f9fa;
+}
+.profile{
+  padding:40px 50px;
+}
+.back1{
+  background: linear-gradient(to right,#ee5a6f,#f29263);
+  height:400px;
+  padding:10px;
+  border-radius:10px;
+}
+.card-block{
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+}
+.bl2{
+  margin-left:-12px;
+}
+
+.abt{
+  padding:30px;
+}
+
+.ord{
+  text-align:center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding:20px;
+}
+
+.bike{
+  background-color: #000080;
+  color:white;
+  padding:5px;
+  border-radius: 4px;
+}
+
+.sp{
+  text-align: center;
+}

@@ -1,0 +1,30 @@
+{% extends 'first/base.html' %}
+{% block content %}
+<div class="row">
+
+{% for i in bike %}
+    <div class="col-md-3 col-sm-6">
+        <div class="card bike_details my-5 mx-2" >
+        <img src="{{i.bikeimg.url}}" class="card-img-top" alt="" height=180 width=190>
+        <div class="card-body">
+          <div class="card-title">
+            <h5>{{i.name}}</h5>
+          </div>
+          <br>
+          <div style="display:flex;">
+            <div>
+              <p>Starting at<br><b>
+              &#x20B9; {{i.costperday}}/Day</b></p>
+            </div>
+            <div class="float-right mx-2">
+              <a href="{% url 'bikeadding' i.id %}" class="btn btn-success">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+
+</div>
+
+{% endblock content %}

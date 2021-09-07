@@ -1,0 +1,80 @@
+{% extends 'first/base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="/static/first/css/home.css">
+{% endblock head %}
+{% block bg %}
+<div class="homecarousel">
+  <div class="para">
+    <div class="content">
+      <h2>WELCOME TO BIKES365</h2>
+      <p>Hire bikes at cheaper price and enjoy your ride</p>
+    </div>
+  </div>
+</div>
+{% endblock bg %}
+{% block content %}
+<br>
+<div class="row">
+  <div class="col-md-4 col-sm-12 offset-md-2 util">
+    <center>
+    <img src="/static/first/homeimg/map2.jpg" alt="" height=180 width=200>
+    <br><br>
+    <h4>No Riding Limits</h4>
+    <p>Odometer won't scare you anymore.</p>
+    </center>
+  </div>
+  <div class="col-md-4 col-sm-12 util">
+    <center>
+    <img src="/static/first/homeimg/helmet2.jpg" alt="" height=180 width=200>
+    <br><br>
+    <h4>FreeBies</h4>
+    <p>Helmet always, sometimes more.</p>
+    </center>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-4 col-sm-12 offset-md-2 util">
+    <center>
+    <img src="/static/first/homeimg/247.jpg" alt="" height=180 width=200>
+    <br><br>
+    <h4>Fixed Renting Scheme</h4>
+    <p>A Day rent is simply for 24 hrs, we mean it.</p>
+    </center>
+  </div>
+  <div class="col-md-4 col-sm-12 util">
+    <center>
+    <img src="/static/first/homeimg/secure.jpg" alt="" height=180 width=200>
+    <br><br>
+    <h4>Secure Payments</h4>
+    <p>Our payment partners are Industry leaders.</p>
+    </center>
+  </div>
+</div>
+<br>
+<div class="whowearebg">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="whowearefront">
+          <h2>WHO WE ARE ?</h2>
+          <br>
+          <p>Bikes365 is a leading motorbike rental company that offers a diversified and exceptional range of two-wheelers
+             on rent. Bike riders who have a spirit governed by an intense passion to ride different bikes have just landed
+              in the right place. We are regarded as one of the best bike rental companies due to our personalized service
+              and higher commitment levels. We have a huge store of exclusive bikes where riders can choose to ride on an
+             hourly, daily, weekly or monthly basis.</p>
+             <br>
+             <a href="{% url 'about' %}" class="btn btn-success">More >></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row footer">
+  <div class="col-sm-12">
+    &copy; BIKES365. ALL RIGHTS RESERVED
+  </div>
+</div>
+{% endblock content %}
